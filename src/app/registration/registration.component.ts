@@ -13,10 +13,10 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit() {
     this.signupForm = new FormGroup({
-      'email': new FormControl(null,Validators.required),
-      'password': new FormControl(null),
-      'gender': new FormControl(null),
-      'role': new FormControl(null),
+      'email': new FormControl(null,[Validators.required,Validators.email]),
+      'password': new FormControl(null,Validators.required),
+      'gender': new FormControl(null,Validators.required),
+      'role': new FormControl(null,Validators.required),
     })
   }
 
