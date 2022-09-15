@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
-  imports: [BrowserModule, ReactiveFormsModule,AppRoutingModule],
+  imports: [BrowserModule, ReactiveFormsModule,AppRoutingModule,],
   declarations: [AppComponent, RegistrationComponent, LoginComponent,],
   bootstrap: [AppComponent],
 })
