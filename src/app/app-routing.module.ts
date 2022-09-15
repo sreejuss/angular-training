@@ -6,6 +6,10 @@ import { RegistrationComponent } from './registration/registration.component';
 const routes: Routes = [
   {path:"",component:LoginComponent},
   {path:"register",component:RegistrationComponent},
+  {
+    path:"products",
+    loadChildren:()=>import('./products/products.module').then(m=>m.ProductsModule)
+  },
 ];
 
 @NgModule({

@@ -6,12 +6,21 @@ import { PRODUCTS_API } from '../apis/api';
 @Injectable({
   providedIn: 'root'
 })
-export class StudentDataService {
+export class service {
 
 
   constructor(private _http:HttpClient) { }
+
   getProducts():Observable<any[]>{
     return this._http.get<any[]>(PRODUCTS_API);
+  }
+
+  deleteProduct(productId:number){
+    return this._http.delete(`${PRODUCTS_API}/${productId}`);
+  }
+
+  addProduct(product:any[]){
+    return this._http.post(PRODUCTS_API,product)
   }
 
 }
