@@ -32,7 +32,7 @@ export class RegistrationComponent implements OnInit {
   
 
   onSubmit(){
-    console.log(this.signupForm.get('email').value);
+    console.log(this.signupForm.value);
   }
 
 }

@@ -1,3 +1,4 @@
+<div class="card" style="width: 18rem;">
 <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="email">Email address</label>
@@ -9,7 +10,11 @@
       placeholder="Enter email"
       formControlName="email"
     />
-    <span *ngIf="!signupForm.valid&&signupForm.touched">Email is required</span>
+    <div 
+      class="text-danger" 
+      *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched"
+    > Email is required
+    </div>
   </div>
 
   <div class="form-group">
@@ -21,6 +26,13 @@
       placeholder="Password"
       formControlName="password"
     />
+    <div
+      class="text-danger"
+      *ngIf="
+        !signupForm.get('password').valid && signupForm.get('password').touched"
+    >
+      Password is required
+    </div>
   </div>
 
   <div class="form-group">
@@ -29,15 +41,34 @@
       <option value="">Select Role</option>
       <option *ngFor="let role of roles" [ngValue]="role">{{ role }}</option>
     </select>
+    <div
+      class="text-danger"
+      *ngIf="!signupForm.get('role').valid && signupForm.get('role').touched"
+    >
+      Role is required
+    </div>
   </div>
 
   <div class="radio" *ngFor="let gender of genders">
     <label for="">
-      <input type="radio" formControlName="gender" [value]="gender" />{{
-        gender
-      }}
+      <input type="radio" formControlName="gender" [value]="gender" />{{gender}}
     </label>
+    <div
+      class="text-danger"
+      *ngIf="
+        !signupForm.get('gender').valid && signupForm.get('gender').touched"
+    >
+      Gender is required
+    </div>
   </div>
 
-  <button type="submit" class="btn btn-primary">Register</button>
+  <button 
+    type="submit" 
+    class="btn btn-primary" 
+    [disabled]="!signupForm.valid">
+    Register
+  </button>
+
+  <button class="btn btn-primary" routerLink="">Login</button>
 </form>
+</div>

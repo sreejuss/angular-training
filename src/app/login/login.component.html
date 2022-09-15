@@ -1,5 +1,5 @@
+<div class="card" style="width: 18rem;">
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-
   <div class="form-group">
     <label for="email">Email address</label>
     <input
@@ -10,8 +10,8 @@
       placeholder="Enter email"
       formControlName="email"
     />
-    <span *ngIf="!loginForm.valid && loginForm.touched" class="text-danger"
-      >Email is required</span
+    <div *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched" class="text-danger"
+      >Email is required</div
     >
   </div>
 
@@ -24,9 +24,10 @@
       placeholder="Password"
       formControlName="password"
     />
-    <span *ngIf="!loginForm.valid && loginForm.touched" class="text-danger">Password is required</span>
+    <div *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched" class="text-danger">Password is required</div>
   </div>
 
-  <button type="submit" class="btn btn-primary">Login</button>
+  <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
   <button  class="btn btn-primary" routerLink="register">Register</button>
 </form>
+</div>
