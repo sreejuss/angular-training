@@ -3,3 +3,8 @@
 <div [formGroup]="searchForm">
     <input type="text" formControlName="name" (keyup)="readValue()">
 </div>
+
+<div>
+<button #validate (click)="fromEventObservable()" class="btn btn-primary btn-sm" >From event</button>
+
+</div>
