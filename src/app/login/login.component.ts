@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl,FormGroup,Validators,FormBuilder} from '@angular/forms'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import {FormControl,FormGroup,Validators,FormBuilder} from '@angular/forms'
 export class LoginComponent implements OnInit {
 
   loginForm:FormGroup;
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,private router:Router) { }
 
   ngOnInit() {
     this.loginForm=this.fb.group({
@@ -22,8 +23,12 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     console.log(this.loginForm.value);
     const { email, password}= this.loginForm.value;
-    if (email==="admin"&&password==="password")
+    const local_email = localStorage.getItem('email')
+    const local_password = localStorage.getItem('password')
+    if (email===local_email&&password===local_password){
       alert("Login Success")
+      this.router.navigate(['/products/dashboard'])
+    }
     else
       alert("Invalid credentials")
   }

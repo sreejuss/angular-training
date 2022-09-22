@@ -19,8 +19,10 @@ export class service {
     return this._http.delete(`${PRODUCTS_API}/${productId}`);
   }
 
-  addProduct(product:any[]){
-    return this._http.post(PRODUCTS_API,product)
+  addProduct(product:any){
+    return this._http.post(`${PRODUCTS_API}/add`,product);
   }
+
+  
 
 }

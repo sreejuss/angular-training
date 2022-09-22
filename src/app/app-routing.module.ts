@@ -6,6 +6,7 @@ import { RxjsLearningComponent } from './rxjs-learning/rxjs-learning.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
+  {path:"login",component:LoginComponent},
   {path:"register",component:RegistrationComponent},
   {path:"rxjs",component:RxjsLearningComponent},
   {
