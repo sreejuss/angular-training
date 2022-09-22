@@ -1,5 +1,12 @@
 <div class="container">
-  <button (click)="addProduct()" class="btn btn-primary">Add Product</button>
+  <div class="row">
+    <div class="col-10">
+      <button (click)="addProduct()" class="btn btn-primary">Add Product</button>
+    </div>
+    <div class="col-2">
+      <button (click)="logout()" class="btn btn-warning">Logout</button>
+    </div>
+  </div>
   <table class="table">
     <thead>
       <tr>

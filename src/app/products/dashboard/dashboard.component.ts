@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { service } from '../../services/service.service';
 
 @Component({
@@ -9,10 +10,16 @@ import { service } from '../../services/service.service';
 export class DashboardComponent implements OnInit {
   productsArray: any[];
 
-  constructor(private service: service) {}
+  constructor(private service: service, private router:Router) {}
 
   ngOnInit(): void {
     this.fetchProducts();
+  }
+
+  logout(){
+    localStorage.removeItem('email');
+    localStorage.removeItem('password');
+    this.router.navigate(['/login'])
   }
 
   fetchProducts() {

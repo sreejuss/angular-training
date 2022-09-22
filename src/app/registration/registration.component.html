@@ -42,7 +42,7 @@
 
     <div class="form-group">
       <label for="role">Role</label>
-      <select name="role" id="role" formControlName="role">
+      <select name="role" id="role" formControlName="role" aria-placeholder="Select role">
         <option value="">Select Role</option>
         <option *ngFor="let role of roles" [ngValue]="role">{{ role }}</option>
       </select>
@@ -54,12 +54,11 @@
       </div>
     </div>
 
+    <label for="gender">Gender</label>
     <div class="radio" *ngFor="let gender of genders">
-      <label for="">
         <input type="radio" formControlName="gender" [value]="gender" />{{
           gender
         }}
-      </label>
       <div
         class="text-danger"
         *ngIf="
