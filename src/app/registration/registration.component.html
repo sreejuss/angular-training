@@ -1,74 +1,83 @@
 <div class="card" style="width: 18rem;">
-<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="email">Email address</label>
-    <input
-      type="email"
-      class="form-control"
-      id="email"
-      aria-describedby="email"
-      placeholder="Enter email"
-      formControlName="email"
-    />
-    <div 
-      class="text-danger" 
-      *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched"
-    > Email is required
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        aria-describedby="email"
+        placeholder="Enter email"
+        formControlName="email"
+      />
+      <div
+        class="text-danger"
+        *ngIf="
+          !signupForm.get('email').valid && signupForm.get('email').touched
+        "
+      >
+        Email is required
+      </div>
     </div>
-  </div>
 
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input
-      type="password"
-      class="form-control"
-      id="password"
-      placeholder="Password"
-      formControlName="password"
-    />
-    <div
-      class="text-danger"
-      *ngIf="
-        !signupForm.get('password').valid && signupForm.get('password').touched"
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="Password"
+        formControlName="password"
+      />
+      <div
+        class="text-danger"
+        *ngIf="
+          !signupForm.get('password').valid &&
+          signupForm.get('password').touched
+        "
+      >
+        Password is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="role">Role</label>
+      <select name="role" id="role" formControlName="role">
+        <option value="">Select Role</option>
+        <option *ngFor="let role of roles" [ngValue]="role">{{ role }}</option>
+      </select>
+      <div
+        class="text-danger"
+        *ngIf="!signupForm.get('role').valid && signupForm.get('role').touched"
+      >
+        Role is required
+      </div>
+    </div>
+
+    <div class="radio" *ngFor="let gender of genders">
+      <label for="">
+        <input type="radio" formControlName="gender" [value]="gender" />{{
+          gender
+        }}
+      </label>
+      <div
+        class="text-danger"
+        *ngIf="
+          !signupForm.get('gender').valid && signupForm.get('gender').touched
+        "
+      >
+        Gender is required
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!signupForm.valid"
     >
-      Password is required
-    </div>
-  </div>
+      Register
+    </button>
 
-  <div class="form-group">
-    <label for="role">Role</label>
-    <select name="role" id="role" formControlName="role">
-      <option value="">Select Role</option>
-      <option *ngFor="let role of roles" [ngValue]="role">{{ role }}</option>
-    </select>
-    <div
-      class="text-danger"
-      *ngIf="!signupForm.get('role').valid && signupForm.get('role').touched"
-    >
-      Role is required
-    </div>
-  </div>
-
-  <div class="radio" *ngFor="let gender of genders">
-    <label for="">
-      <input type="radio" formControlName="gender" [value]="gender" />{{gender}}
-    </label>
-    <div
-      class="text-danger"
-      *ngIf="
-        !signupForm.get('gender').valid && signupForm.get('gender').touched"
-    >
-      Gender is required
-    </div>
-  </div>
-
-  <button 
-    type="submit" 
-    class="btn btn-primary" 
-    [disabled]="!signupForm.valid">
-    Register
-  </button>
-
-  <button class="btn btn-primary" routerLink="">Login</button>
-</form>
+    <button class="btn btn-primary" routerLink="">Login</button>
+  </form>
 </div>

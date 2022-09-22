@@ -1,32 +1,36 @@
 <div class="container">
-<!-- <p *ngFor="let i of productsArray">
-  {{i.id}} {{i.title}}
-</p> -->
-<button (click)="addProduct()">Add Product</button>
-<table class="table">
-<thead>
-  <tr>
-    <th scope="col">ID</th>
-    <th scope="col">Image</th>
-    <th scope="col">Title</th>
-    <th scope="col">Description</th>
-    <th scope="col">Price</th>
-    <th scope="col">Actions</th>
-  </tr>
-</thead>
+  <button (click)="addProduct()" class="btn btn-primary">Add Product</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Image</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
 
-<tbody>
-  <tr *ngFor="let product of productsArray">
-    <td>{{product.id}}</td>
-    <td><img [src]="product.thumbnail" alt="" height="50px" width="50px"></td>
-    <td>{{product.title}}</td>
-    <td >{{product.description}}</td>
-    <td>{{product.price}}</td>
-    <td>
-    <button type="button" (click)="deleteProduct(product.id)">Delete</button>
-    </td>
-  </tr>
-</tbody>
-</table>
+    <tbody>
+      <tr *ngFor="let product of productsArray">
+        <td>{{ product.id }}</td>
+        <td>
+          <img [src]="product.thumbnail" alt="" height="50px" width="50px" />
+        </td>
+        <td>{{ product.title }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price }}</td>
+        <td>
+          <button
+            class="btn btn-danger"
+            type="button"
+            (click)="deleteProduct(product.id)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-

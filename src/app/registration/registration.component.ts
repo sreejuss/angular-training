@@ -14,12 +14,21 @@ export class RegistrationComponent implements OnInit {
   constructor(private fb:FormBuilder, private router:Router) { }
 
   ngOnInit() {
-    // this.signupForm = new FormGroup({
-    //   'email': new FormControl(null,[Validators.required,Validators.email]),
-    //   'password': new FormControl(null,Validators.required),
-    //   'gender': new FormControl(null,Validators.required),
-    //   'role': new FormControl(null,Validators.required),
-    // })
+
+    /**
+     * Use of form group
+     
+    this.signupForm = new FormGroup({
+      'email': new FormControl(null,[Validators.required,Validators.email]),
+      'password': new FormControl(null,Validators.required),
+      'gender': new FormControl(null,Validators.required),
+      'role': new FormControl(null,Validators.required),
+    })
+    */
+
+    /**
+     * Use of form builder
+     */
     this.signupForm=this.fb.group({
       'email': new FormControl(null,[Validators.required,Validators.email]),
       'password': new FormControl(null,Validators.required),
@@ -30,7 +39,6 @@ export class RegistrationComponent implements OnInit {
   }
 
   
-
   onSubmit(){
     const {email,password}=this.signupForm.value;
     localStorage.setItem('email',email)
