@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BootstrapLearningComponent } from './bootstrap-learning/bootstrap-learning.component';
+import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { RxjsLearningComponent } from './rxjs-learning/rxjs-learning.component';
