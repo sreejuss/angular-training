@@ -2,14 +2,14 @@
   color: red;
 }
 
-.card {
-  position: absolute;
-  background: #f5efef;
-  border-radius: 20px;
+.card-wrapper{
+  align-content: center;
   width: 400px;
   height: 400px;
-  margin-left: 440px;
-  margin-top: 20px;
+}
+.card {
+  background: #f5efef;
+  border-radius: 20px;
 }
 
 .form-wrapper{
@@ -17,6 +17,6 @@
 }
 
 .login-btn{
-  margin-top: 10px;
-  margin-left: 120px;
+  align-content: center;
+
 }

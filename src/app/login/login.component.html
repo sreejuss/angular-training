@@ -1,5 +1,5 @@
-<div class="card-wrapper row">
-  <div class="card">
+<div class="card-wrapper container">
+  <div class="card mt-3">
     <div class="form-wrapper">
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
@@ -40,17 +40,18 @@
             Password is required
           </div>
         </div>
-        <div class="login-btn">
+        <div class="login-btn mt-2">
           <button
             type="submit"
-            class="btn btn-primary"
+            class="btn btn-primary btn-sm"
             [disabled]="!loginForm.valid"
           >
             Login
           </button>
         </div>
       </form>
+      <small>Don't have an account?.</small>
+      <button class="btn btn-primary btn-sm" routerLink="register">Click here to Register</button>
     </div>
-    <!-- <button class="btn btn-primary" routerLink="register">Register</button> -->
   </div>
 </div>
