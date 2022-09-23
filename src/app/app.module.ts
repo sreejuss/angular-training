@@ -8,12 +8,13 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RxjsLearningComponent } from './rxjs-learning/rxjs-learning.component';
+import { BootstrapLearningComponent } from './bootstrap-learning/bootstrap-learning.component';
 
 
 
 @NgModule({
   imports: [BrowserModule, ReactiveFormsModule,AppRoutingModule,HttpClientModule],
-  declarations: [AppComponent, RegistrationComponent, LoginComponent,RxjsLearningComponent],
+  declarations: [AppComponent, RegistrationComponent, LoginComponent,RxjsLearningComponent,BootstrapLearningComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
