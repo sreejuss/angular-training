@@ -3,8 +3,8 @@
     <div class="col">
       <button (click)="addProduct()" class="btn btn-primary">Add Product</button>
     </div>
-    <div class="col">
-      <button  class="btn btn-info" >Go Back</button>
+    <div class="col" [formGroup]="searchForm">
+    <input type="text" formControlName="name" (keyup)="readValue()" placeholder="Search products">
     </div>
     <div class="col">
       <button (click)="logout()" class="btn btn-warning">Logout</button>
