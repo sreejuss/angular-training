@@ -1,0 +1,104 @@
+@import './variables.scss';
+
+$mainColor: red;
+$bgColor: black;
+p{
+    color: $mainColor;
+}
+
+h1{
+    color: $mainColor;
+    background-color: $bgColor;
+}
+
+@mixin headingStyle($color:green) {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px;
+    font-weight: 600;
+    color: $color;
+}
+
+h1{
+    @include headingStyle($varibale1);
+}
+
+h2{
+    @include headingStyle();
+}
+
+.button1{
+    padding: 5px;
+    border: none;
+}
+
+.button2{
+    @extend .button1;
+    background: lightblue;
+}
+
+/* Looping */
+
+@for $var from 3 through 6 {
+    h#{$var}{
+        @include headingStyle();
+    }
+}
+
+@for $i from 1 to 100 {
+    .p#{$i}{
+        padding: #{$i}px;
+    }
+
+}
+
+$menu-items : home about services contact;
+
+@each $item in $menu-items {
+    .#{$item}{
+        color: lightblue;
+        padding: 10px;
+    }
+}
+
+// Nesting
+
+nav{
+    background: lightcyan;
+    ul{
+        list-style: none;
+        li{
+            &:hover{
+                background: yellow;
+            }
+            display: inline-block;
+
+        }
+    }
+}
+
+//while loop
+
+$j:0;
+
+@while $j<6 {
+    h#{$j}{
+        color:blueviolet;
+    }
+    $j : $j + 1;
+}
+
+// use if
+
+$float: 'left';
+
+@if $float== 'left' {
+    h1{
+        float: left;
+    }
+}
+
+@else{
+    h1{
+        float: right;
+    }
+}
