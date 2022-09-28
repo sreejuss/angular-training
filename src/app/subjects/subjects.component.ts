@@ -1,15 +1,38 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-subjects',
   templateUrl: './subjects.component.html',
-  styleUrls: ['./subjects.component.css']
+  styleUrls: ['./subjects.component.css'],
 })
 export class SubjectsComponent implements OnInit {
+  myData = [];
+  subject = new Subject();
 
-  constructor() { }
-
-  ngOnInit() {
+  emitData(){
+    this.subject.next(1);
+    setTimeout(()=>{
+      this.subject.next(2);
+    },3000)
+    setTimeout(()=>{
+      this.subject.next(3);
+    },6000)
+    setTimeout(()=>{
+      this.subject.next(4);
+    },9000)
+    setTimeout(()=>{
+      this.subject.next(5);
+    },1200)
   }
 
+  getData(){
+    this.subject.subscribe((data:any)=>{
+      this.myData.push(data);
+    })
+  }
+  
+  constructor() {}
+
+  ngOnInit() {}
 }
