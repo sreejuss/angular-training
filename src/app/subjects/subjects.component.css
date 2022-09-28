@@ -1,12 +1,11 @@
-.container{
-  display: flex;
-  
-}
 .btn-container{
-
-  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .text-container{
-  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
+import { ReplaySubject, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-subjects',
@@ -23,7 +23,7 @@ export class SubjectsComponent implements OnInit {
     },9000)
     setTimeout(()=>{
       this.subject.next(5);
-    },1200)
+    },12000)
   }
 
   getData(){
