@@ -12,12 +12,13 @@ import { BootstrapLearningComponent } from './bootstrap-learning/bootstrap-learn
 import { HeaderComponent } from './header/header.component';
 import { FlexboxComponent } from './flexbox/flexbox.component';
 import { ScssLearningComponent } from './scss-learning/scss-learning.component';
+import { SubjectsComponent } from './subjects/subjects.component';
 
 
 
 @NgModule({
   imports: [BrowserModule, ReactiveFormsModule,AppRoutingModule,HttpClientModule],
-  declarations: [AppComponent, RegistrationComponent, LoginComponent,RxjsLearningComponent,BootstrapLearningComponent,HeaderComponent,FlexboxComponent,ScssLearningComponent],
+  declarations: [AppComponent, RegistrationComponent, LoginComponent,RxjsLearningComponent,BootstrapLearningComponent,HeaderComponent,FlexboxComponent,ScssLearningComponent,SubjectsComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

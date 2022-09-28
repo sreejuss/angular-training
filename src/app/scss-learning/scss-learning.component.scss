@@ -1,5 +1,6 @@
 @import './variables.scss';
 
+// variables 
 $mainColor: red;
 $bgColor: black;
 p{
@@ -10,6 +11,8 @@ h1{
     color: $mainColor;
     background-color: $bgColor;
 }
+
+// mixins
 
 @mixin headingStyle($color:green) {
     font-family: 'Courier New', Courier, monospace;

@@ -7,7 +7,9 @@ import {
   fromEvent,
   interval,
   elementAt,
+  Subject,
 } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
 import { filter, first, last, take } from 'rxjs/operators';
 
 @Component({
@@ -16,7 +18,6 @@ import { filter, first, last, take } from 'rxjs/operators';
   styleUrls: ['./rxjs-learning.component.css'],
 })
 export class RxjsLearningComponent implements OnInit {
-
   searchForm: FormGroup;
 
   // of operator
@@ -27,7 +28,7 @@ export class RxjsLearningComponent implements OnInit {
     name: 'sreeju',
   };
   object$: Observable<any> = of(this.object);
-  
+
   // end of of-operator
   constructor(private fb: FormBuilder) {}
   // from event
@@ -64,6 +65,37 @@ export class RxjsLearningComponent implements OnInit {
     this.object$.subscribe((res) => {
       console.log(res);
     });
+
+    /*
+     * Observables vs Subject
+     * Observables are single cast
+     * Subjects are multicast
+     * Example
+     */
+    // Observable example
+    //
+    const observable = new Observable(obj =>
+    obj.next(Math.random()));
+    // //Subscriber 1
+    observable.subscribe(d=>console.log(d));
+    // //Subscriber 2
+    observable.subscribe(d=>console.log(d));
+
+    // Subjects example
+    const subject = new Subject();
+    
+    subject.subscribe(d=>console.log(d))
+    subject.subscribe(d=>console.log(d))
+    subject.next(Math.random())
+
+
+    // one network call only
+    const subject1 = new Subject();
+    const data= ajax('https://jsonplaceholder.typicode.com/posts')
+    subject1.subscribe(d=>console.log(d))
+    subject1.subscribe(d=>console.log(d))
+    const result=data.subscribe(subject1)
+
   }
 
   checkCondition(v) {
