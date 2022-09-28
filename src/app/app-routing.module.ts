@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BootstrapLearningComponent } from './bootstrap-learning/bootstrap-learning.component';
+import { FlexboxComponent } from './flexbox/flexbox.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:"register",component:RegistrationComponent},
   {path:"rxjs",component:RxjsLearningComponent},
   {path:"bootstrap",component:BootstrapLearningComponent},
+  {path:"flexbox",component:FlexboxComponent},
   {
     path:"products",
     loadChildren:()=>import('./products/products.module').then(m=>m.ProductsModule)
