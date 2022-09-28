@@ -1,0 +1,12 @@
+.container{
+  display: flex;
+  
+}
+.btn-container{
+
+  background-color: aqua;
+}
+
+.text-container{
+  background-color: bisque;
+}
