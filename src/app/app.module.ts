@@ -11,12 +11,13 @@ import { RxjsLearningComponent } from './rxjs-learning/rxjs-learning.component';
 import { BootstrapLearningComponent } from './bootstrap-learning/bootstrap-learning.component';
 import { HeaderComponent } from './header/header.component';
 import { FlexboxComponent } from './flexbox/flexbox.component';
+import { ScssLearningComponent } from './scss-learning/scss-learning.component';
 
 
 
 @NgModule({
   imports: [BrowserModule, ReactiveFormsModule,AppRoutingModule,HttpClientModule],
-  declarations: [AppComponent, RegistrationComponent, LoginComponent,RxjsLearningComponent,BootstrapLearningComponent,HeaderComponent,FlexboxComponent],
+  declarations: [AppComponent, RegistrationComponent, LoginComponent,RxjsLearningComponent,BootstrapLearningComponent,HeaderComponent,FlexboxComponent,ScssLearningComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { RxjsLearningComponent } from './rxjs-learning/rxjs-learning.component';
+import { ScssLearningComponent } from './scss-learning/scss-learning.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:"rxjs",component:RxjsLearningComponent},
   {path:"bootstrap",component:BootstrapLearningComponent},
   {path:"flexbox",component:FlexboxComponent},
+  {path:"scss",component:ScssLearningComponent},
   {
     path:"products",
     loadChildren:()=>import('./products/products.module').then(m=>m.ProductsModule)
