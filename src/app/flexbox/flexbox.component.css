@@ -1,0 +1,25 @@
+h1{
+  margin: 0;
+}
+.container{
+  display: flex;
+  /* flex-direction: row-reverse; */
+  background-color: aquamarine;
+  justify-content: space-evenly;
+  height: 500px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.one,.two,.three{
+  flex: 1;
+  width: 300px;
+  height: 200px;
+  background-color: beige;
+  border: 1px solid white;
+  text-align: center;
+  padding: 5px;
+}
+
+.two{
+  order: 1;
+}
