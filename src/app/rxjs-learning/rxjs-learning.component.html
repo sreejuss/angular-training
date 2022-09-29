@@ -6,6 +6,9 @@
   </div>
 
   <div>
+  <lib-search class="search mr-10px mb-10px" (searchText)="setSearch($event)"></lib-search>
+
+  <div>
     <button
       #validate
       (click)="fromEventObservable()"
