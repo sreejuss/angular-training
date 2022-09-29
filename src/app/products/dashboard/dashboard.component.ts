@@ -11,6 +11,7 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class DashboardComponent implements OnInit {
   productsArray: any[];
+  searchTerm:string;
 
   constructor(private service: service, private router:Router) {}
   searchForm: FormGroup;
@@ -52,6 +53,10 @@ export class DashboardComponent implements OnInit {
       alert('New Product has been added!.');
       console.log(response);
     });
+  }
+
+  search(){
+
   }
   readValue() {
     this.searchForm
