@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BootstrapLearningComponent } from './bootstrap-learning/bootstrap-learning.component';
 import { FlexboxComponent } from './flexbox/flexbox.component';
+import { GameComponent } from './game/game.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -10,7 +11,7 @@ import { ScssLearningComponent } from './scss-learning/scss-learning.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 
 const routes: Routes = [
-  {path:"",component:LoginComponent},
+  {path:"",component:GameComponent},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegistrationComponent},
   {path:"rxjs",component:RxjsLearningComponent},
