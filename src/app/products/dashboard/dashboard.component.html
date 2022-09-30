@@ -4,7 +4,7 @@
       <button (click)="addProduct()" class="btn btn-primary">Add Product</button>
     </div>
     <div class="col" [formGroup]="searchForm">
-    <input type="text" formControlName="name" (keyup)="readValue()" placeholder="Search products" [(ngModel)]="searchTerm">
+    <input type="text" formControlName="name" (input)="searchHandler($event)" placeholder="Search products">
     </div>
     <div class="col">
       <button (click)="logout()" class="btn btn-warning">Logout</button>

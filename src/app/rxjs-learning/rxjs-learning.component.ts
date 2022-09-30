@@ -19,7 +19,7 @@ import { filter, first, last, take } from 'rxjs/operators';
 })
 export class RxjsLearningComponent implements OnInit {
   searchForm: FormGroup;
-  searchText: string = '';
+  searchText: any;
   // of operator
   string$: Observable<any> = of('hello');
   array$: Observable<any> = of(['Sreeju', 'John', 'Mark']);
@@ -111,8 +111,8 @@ export class RxjsLearningComponent implements OnInit {
       console.log(data);
     });
   }
-  setSearch($event:string){
+  setSearch(e){
     // this.searchText = $event;
-    // console.log(this.searchText)
+    console.log(e.target.value)
   }
 }

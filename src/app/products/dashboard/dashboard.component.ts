@@ -29,11 +29,18 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/login'])
   }
 
-  fetchProducts() {
+  fetchProducts(searchTerm?:string) {
+    if(searchTerm){
+      this.service.searchProduct(searchTerm).subscribe((response)=>{
+        this.productsArray=response['products']
+      })
+    }
+    else{
     this.service.getProducts().subscribe((response) => {
       console.log(response['products']);
       this.productsArray = response['products'];
     });
+  }
   }
 
   deleteProduct(productId: number) {
@@ -55,19 +62,9 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  search(){
-
-  }
-  readValue() {
-    this.searchForm
-      .get('name')
-      .valueChanges.pipe(
-        debounceTime(400)
-      )
-      .subscribe((data) => {
-        this.service.searchProduct(data).subscribe(response=>{
-          this.productsArray = response['products'];
-        })
-      });
+  searchHandler(event) {
+    this.searchTerm=event.target.value;
+    this.fetchProducts(this.searchTerm)
+ ;
   }
 }
