@@ -1,0 +1,44 @@
+<div class="container">
+<div class="header">
+    <div class="logo-wrapper">
+        <img src="../../assets/logo.svg" alt="Logo">
+    </div>
+    <div class="tools-wrapper">
+        <img src="../../assets/language.svg" alt="language">
+        <img src="../../assets/help.svg" alt="Help">
+        <img src="../../assets/view-icon.svg" alt="View">
+    </div>
+</div>
+<div class="content">
+    <h1 class="title">Redeem the reward</h1>
+    <span class="label">Please provide the details</span>
+
+    <form [formGroup]="form">
+        <label for="email" class="email">Your Email ID*</label>
+        <input type="email" name="email" id="email" class="email" formControlName="email"
+            placeholder="Don't worry, we are not spammers" />
+        <div *ngIf="submitted && f?.['email']?.errors" class="text-danger error-message">
+            <div *ngIf="f?.['email']?.errors?.['required']">Email is required</div>
+            <div *ngIf="f?.['email']?.errors?.['email']">Email must be a valid email address</div>
+        </div>
+
+        <label for="" class="checkbox-label">Lorem ipsum</label>
+        <div class="checkbox-container">
+            <input type="checkbox" name="checkbox" id="" class="checkbox" formControlName="checkboxValue">
+        </div>
+        <label for="name" class="name">Your Name</label>
+        <input type="text" name="name" id="name" class="name" formControlName="name"
+            placeholder="Only if you'd want to tell us">
+        <label for="organization" class="organization">Your Organization</label>
+        <input type="text" name="organization" id="organization" class="organization"
+            formControlName="organizationName" placeholder="Only if you'd want to tell us">
+        <button type="submit" class="button-submit" (click)="onSubmit()">
+            <p class="button-text">Submit and Exit</p>
+            <!-- <div class="line-arrow"> -->
+                <img src="../../assets/line.svg" alt="" class="line-arrow" >
+            <!-- </div> -->
+        </button>
+    </form>
+
+</div>
+</div>

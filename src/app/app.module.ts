@@ -13,12 +13,13 @@ import { HeaderComponent } from './header/header.component';
 import { FlexboxComponent } from './flexbox/flexbox.component';
 import { ScssLearningComponent } from './scss-learning/scss-learning.component';
 import { SubjectsComponent } from './subjects/subjects.component';
+import { GameComponent } from './game/game.component';
 
 
 
 @NgModule({
   imports: [BrowserModule, ReactiveFormsModule,AppRoutingModule,HttpClientModule],
-  declarations: [AppComponent, RegistrationComponent, LoginComponent,RxjsLearningComponent,BootstrapLearningComponent,HeaderComponent,FlexboxComponent,ScssLearningComponent,SubjectsComponent],
+  declarations: [AppComponent, RegistrationComponent, LoginComponent,RxjsLearningComponent,BootstrapLearningComponent,HeaderComponent,FlexboxComponent,ScssLearningComponent,SubjectsComponent,GameComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
