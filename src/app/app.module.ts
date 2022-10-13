@@ -16,11 +16,11 @@ import { SubjectsComponent } from './subjects/subjects.component';
 import { GameComponent } from './game/game.component';
 import { FormComponent } from './form/form.component';
 import {CalendarModule} from 'primeng/calendar';
-import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+
 
 
 @NgModule({
-  imports: [BrowserModule, ReactiveFormsModule,AppRoutingModule,HttpClientModule,CalendarModule,AngularMultiSelectModule],
+  imports: [BrowserModule, ReactiveFormsModule,AppRoutingModule,HttpClientModule,CalendarModule],
   declarations: [AppComponent, RegistrationComponent, LoginComponent,RxjsLearningComponent,BootstrapLearningComponent,HeaderComponent,FlexboxComponent,ScssLearningComponent,SubjectsComponent,GameComponent,FormComponent],
   bootstrap: [AppComponent],
 })
