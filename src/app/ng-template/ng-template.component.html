@@ -1,0 +1,5 @@
+<div class="article" *ngIf="article"; else loading>{{ article.loading }}</div>
+
+<ng-template #loading>
+  <div>Loading...</div>
+</ng-template>

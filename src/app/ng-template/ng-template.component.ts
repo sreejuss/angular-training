@@ -3,13 +3,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-ng-template',
   templateUrl: './ng-template.component.html',
-  styleUrls: ['./ng-template.component.css']
+  styleUrls: ['./ng-template.component.css'],
 })
 export class NgTemplateComponent implements OnInit {
+  article: { title: string } | null = null;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
