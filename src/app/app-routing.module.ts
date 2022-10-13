@@ -5,6 +5,7 @@ import { FlexboxComponent } from './flexbox/flexbox.component';
 import { GameComponent } from './game/game.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
+import { NgTemplateComponent } from './ng-template/ng-template.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { RxjsLearningComponent } from './rxjs-learning/rxjs-learning.component';
 import { ScssLearningComponent } from './scss-learning/scss-learning.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:"flexbox",component:FlexboxComponent},
   {path:"scss",component:ScssLearningComponent},
   {path:"subjects",component:SubjectsComponent},
+  {path:"ng-template",component:NgTemplateComponent},
   {
     path:"products",
     loadChildren:()=>import('./products/products.module').then(m=>m.ProductsModule)
