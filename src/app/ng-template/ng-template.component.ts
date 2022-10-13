@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ng-template.component.css'],
 })
 export class NgTemplateComponent implements OnInit {
-  article: { title: string } | null = null;
+  article: { title: string } | null = {title:'foo'};
   constructor() {}
 
   ngOnInit() {}

@@ -1,5 +1,16 @@
-<div class="article" *ngIf="article" ; else loading>{{ article.loading }}</div>
+<ng-template [ngIf]="article" [ngIfElse]="loading">
+  <div>{{article.title}}</div>
+</ng-template>
+
+
+<!-- <div class="article" *ngIf="article" ; else loading>{{ article.title }}</div>
 
 <ng-template #loading>
   <div>Loading...</div>
-</ng-template>
+</ng-template> -->
+
+<!-- ng container - to wrap some elements -->
+
+<ng-container *ngIf="articles">
+<ng-container *ngFor="let number of numbers">{{number}}</ng-container>
+</ng-container>
