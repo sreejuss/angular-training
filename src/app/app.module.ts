@@ -17,12 +17,13 @@ import { GameComponent } from './game/game.component';
 import { FormComponent } from './form/form.component';
 import {CalendarModule} from 'primeng/calendar';
 import { NgTemplateComponent } from './ng-template/ng-template.component';
+import { StepperComponent } from './stepper/stepper.component';
 
 
 
 @NgModule({
   imports: [BrowserModule, ReactiveFormsModule,AppRoutingModule,HttpClientModule,CalendarModule],
-  declarations: [AppComponent, RegistrationComponent, LoginComponent,RxjsLearningComponent,BootstrapLearningComponent,HeaderComponent,FlexboxComponent,ScssLearningComponent,SubjectsComponent,GameComponent,FormComponent,NgTemplateComponent],
+  declarations: [AppComponent, RegistrationComponent, LoginComponent,RxjsLearningComponent,BootstrapLearningComponent,HeaderComponent,FlexboxComponent,ScssLearningComponent,SubjectsComponent,GameComponent,FormComponent,NgTemplateComponent,StepperComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
