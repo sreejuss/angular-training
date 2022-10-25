@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -18,11 +19,13 @@ import { FormComponent } from './form/form.component';
 import {CalendarModule} from 'primeng/calendar';
 import { NgTemplateComponent } from './ng-template/ng-template.component';
 import { StepperComponent } from './stepper/stepper.component';
-
-
+import {MatStepperModule} from '@angular/material/stepper';
+import {
+  MatFormFieldModule,
+} from '@angular/material/form-field';
 
 @NgModule({
-  imports: [BrowserModule, ReactiveFormsModule,AppRoutingModule,HttpClientModule,CalendarModule],
+  imports: [BrowserModule, ReactiveFormsModule,FormsModule,AppRoutingModule,HttpClientModule,CalendarModule,MatStepperModule,MatFormFieldModule],
   declarations: [AppComponent, RegistrationComponent, LoginComponent,RxjsLearningComponent,BootstrapLearningComponent,HeaderComponent,FlexboxComponent,ScssLearningComponent,SubjectsComponent,GameComponent,FormComponent,NgTemplateComponent,StepperComponent],
   bootstrap: [AppComponent],
 })
